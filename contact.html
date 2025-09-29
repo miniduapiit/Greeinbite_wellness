@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — GreenBite Wellness</title>
+  <meta name="description" content="Contact GreenBite Wellness for any questions or feedback.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2FAF6A">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">GreenBite</a>
+      <nav class="main-nav" id="main-nav">
+        <a href="recipes.html">Recipes</a>
+        <a href="calculator.html">Calorie Calc</a>
+        <a href="workout.html">Workout</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+<main class="container">
+  <div class="page-header">
+    <h1>Contact & Feedback</h1>
+    <p class="page-description">We'd love to hear from you! Share your thoughts, questions, or suggestions.</p>
+  </div>
+  
+  <div class="contact-container">
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="form-group">
+        <label for="cName">
+          Full Name *
+          <input id="cName" type="text" required aria-describedby="nameError" maxlength="100">
+          <span id="nameError" class="error-message" role="alert"></span>
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="cEmail">
+          Email Address *
+          <input id="cEmail" type="email" required aria-describedby="emailError" maxlength="255">
+          <span id="emailError" class="error-message" role="alert"></span>
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="cMessage">
+          Message *
+          <textarea id="cMessage" rows="5" required aria-describedby="messageError" maxlength="1000" placeholder="Tell us what's on your mind..."></textarea>
+          <span id="messageError" class="error-message" role="alert"></span>
+          <div class="char-counter">
+            <span id="charCount">0</span>/1000 characters
+          </div>
+        </label>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <span class="btn-text">Send Message</span>
+        <span class="btn-loading" hidden>Sending...</span>
+      </button>
+    </form>
+    
+    <div id="confirmationMessage" class="confirmation hidden" aria-live="polite">
+      <div class="confirmation-icon">✅</div>
+      <h3>Thank you for your feedback!</h3>
+      <p>Your message has been received and stored. We appreciate you taking the time to contact us.</p>
+      <button id="sendAnother" class="btn-secondary">Send Another Message</button>
+    </div>
+  </div>
+
+  <div class="location-section">
+    <div class="section-header">
+      <h2>GreenBite HQ</h2>
+      <p>Visit us in beautiful Sri Lanka</p>
+    </div>
+    
+    <div class="location-info">
+      <div class="address-card">
+        <div class="address-icon">📍</div>
+        <div class="address-details">
+          <h3>Our Location</h3>
+          <p>123 Wellness Avenue<br>
+          Colombo 03, Western Province<br>
+          Sri Lanka 00300</p>
+          <div class="contact-details">
+            <p><strong>📞 Phone:</strong> +94 11 234 5678</p>
+            <p><strong>✉️ Email:</strong> hello@greenbite.lk</p>
+            <p><strong>🕒 Hours:</strong> Mon-Fri 9AM-6PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.65785795194!2d79.69472599999999!3d6.921831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1695387600000!5m2!1sen!2sus" 
+          width="100%" 
+          height="350" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="GreenBite HQ Location in Colombo, Sri Lanka">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Find quick answers to common questions about GreenBite</p>
+    </div>
+    
+    <div class="accordion" id="faq">
+      <div class="faq-item">
+        <button class="acc-item" aria-expanded="false">
+          <span class="question-text">How do I subscribe to the newsletter?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="acc-panel" role="region">
+          <div class="panel-content">
+            <p>You can subscribe to our newsletter using the subscription form on the homepage. Simply enter your email address and click "Subscribe" to receive weekly wellness tips, new recipes, and health insights directly to your inbox.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="acc-item" aria-expanded="false">
+          <span class="question-text">Are the recipes suitable for specific diets?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="acc-panel" role="region">
+          <div class="panel-content">
+            <p>Yes! Our recipes include various dietary categories and filters. You can easily find vegetarian, vegan, gluten-free, and other diet-specific options. Each recipe is clearly labeled with its dietary categories and nutritional information.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="acc-item" aria-expanded="false">
+          <span class="question-text">How accurate is the calorie calculator?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="acc-panel" role="region">
+          <div class="panel-content">
+            <p>Our calorie calculator uses the scientifically-proven Mifflin-St Jeor equation to calculate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). While very accurate for most people, individual metabolism can vary. We recommend consulting with a healthcare professional for personalized nutrition advice.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="acc-item" aria-expanded="false">
+          <span class="question-text">Can I save my workout and mindfulness sessions?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="acc-panel" role="region">
+          <div class="panel-content">
+            <p>Absolutely! GreenBite automatically saves your workout sessions and mindfulness practice history in your browser's local storage. You can track your progress, view past sessions, and see your wellness journey over time. Your data stays private and secure on your device.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script type="module">
+// Import toast function
+import { showToast } from './js/common.js';
+
+// Simple FAQ Accordion - works immediately
+document.querySelectorAll('.acc-item').forEach(button => {
+  button.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    const panel = this.closest('.faq-item').querySelector('.acc-panel');
+    
+    // Close all other panels
+    document.querySelectorAll('.acc-item').forEach(otherBtn => {
+      if (otherBtn !== this) {
+        otherBtn.setAttribute('aria-expanded', 'false');
+        const otherPanel = otherBtn.closest('.faq-item').querySelector('.acc-panel');
+        otherPanel.style.maxHeight = '0px';
+      }
+    });
+    
+    // Toggle current panel
+    if (isExpanded) {
+      this.setAttribute('aria-expanded', 'false');
+      panel.style.maxHeight = '0px';
+    } else {
+      this.setAttribute('aria-expanded', 'true');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+
+// Import contact form functionality
+import('./js/contact.js');
+</script>
+</body>
+</html>

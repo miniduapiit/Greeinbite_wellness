@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipes — GreenBite Wellness</title>
+  <meta name="description" content="Healthy and delicious recipes from GreenBite Wellness.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2FAF6A">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/recipes.css">
+</head>
+<body>
+  <!-- header same as index -->
+  <header class="site-header"><div class="container header-inner"><a href="index.html" class="logo">GreenBite</a>
+  <nav class="main-nav"><a href="index.html">Home</a><a href="calculator.html">Calorie Calc</a><a href="workout.html">Workout</a><a href="mindfulness.html">Mindfulness</a><a href="contact.html">Contact</a></nav></div></header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>🥗 Healthy Recipes</h1>
+      <p class="page-description">Discover delicious, nutritious recipes that make healthy eating enjoyable and sustainable.</p>
+    </div>
+    
+    <div class="controls">
+      <input type="search" id="recipeSearch" placeholder="Search recipes by name or ingredient...">
+      <select id="categoryFilter"><option value="">All categories</option></select>
+    </div>
+    
+    <div id="recipeGrid" class="grid"></div>
+
+    <!-- Modal -->
+    <div id="recipeModal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button class="modal-close" id="closeModal">×</button>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImg" alt="">
+        <h3>Ingredients</h3><ul id="modalIngredients"></ul>
+        <h3>Steps</h3><ol id="modalSteps"></ol>
+        <h3>Nutrition</h3><table id="modalNutrition"></table>
+        <button id="saveRecipe">Save recipe</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Healthy Recipes</a></li>
+            <li><a href="calculator.html">Calorie Calculator</a></li>
+            <li><a href="workout.html">Workout Plans</a></li>
+            <li><a href="mindfulness.html">Mindfulness</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Health Resources -->
+        <div class="footer-section">
+          <h3>Health Resources</h3>
+          <ul>
+            <li><a href="#nutrition-tips">Nutrition Tips</a></li>
+            <li><a href="#meal-planning">Meal Planning</a></li>
+            <li><a href="#fitness-guides">Fitness Guides</a></li>
+            <li><a href="#wellness-blog">Wellness Blog</a></li>
+            <li><a href="#health-tracker">Health Tracker</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#community">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section">
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get weekly health tips, recipes, and wellness insights delivered to your inbox.</p>
+            <form id="footerNewsletterForm" class="footer-newsletter-form">
+              <input type="email" id="footerNewsEmail" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="YouTube">📺</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> GreenBite — Empowering your wellness journey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script type="module">
+import { showToast } from './js/common.js';
+import './js/recipes.js';
+import { initializeFooter } from './js/footer.js';
+
+// Initialize footer functionality
+initializeFooter();
+</script>
+</body>
+</html>

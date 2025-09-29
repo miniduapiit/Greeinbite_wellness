@@ -1,0 +1,78 @@
+/* Global styles - used across all pages */
+
+/* CSS Variables */
+:root {
+  --bg: #f7fff5;
+  --accent: #2FAF6A;
+  --muted: #6b6b6b;
+  --card: #ffffff;
+  --radius: 12px;
+  --maxw: 1100px;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Layout containers */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Basic form styles */
+label {
+  display: block;
+  margin: 0.6rem 0;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Toast notifications */
+.gb-toast {
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all .25s;
+}
+
+.gb-toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gb-toast-success {
+  background: #28a745;
+}
+
+.gb-toast-error {
+  background: #d9534f;
+}
+
+.gb-toast-info {
+  background: #2FAF6A;
+}
+

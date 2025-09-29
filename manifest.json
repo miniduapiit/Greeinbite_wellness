@@ -1,0 +1,11 @@
+{
+  "name":"GreenBite",
+  "short_name":"GreenBite",
+  "start_url":"index.html",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#2FAF6A",
+  "icons":[
+    {"src":"images/icon.png","sizes":"512x512","type":"image/png"}
+  ]
+}

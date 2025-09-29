@@ -1,0 +1,105 @@
+/*
+Author: GreenBite
+Project: GreenBite Wellness Site
+Date: 22-09-2025
+Description: This file contains all the styles for the header of the GreenBite Wellness Site.
+*/
+
+/* Site header and navigation */
+.site-header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.main-nav a {
+    margin: 0 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.hamburger {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive design for header */
+@media (max-width: 800px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        display: block;
+        margin: 0.75rem 0;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header-inner {
+        padding: 0.75rem 1rem;
+    }
+}

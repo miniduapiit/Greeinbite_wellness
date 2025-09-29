@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindfulness — GreenBite Wellness</title>
+  <meta name="description" content="Mindfulness exercises to help you relax and de-stress.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2FAF6A">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/mindfulness.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">GreenBite</a>
+      <nav class="main-nav" id="main-nav">
+        <a href="recipes.html">Recipes</a>
+        <a href="calculator.html">Calorie Calc</a>
+        <a href="workout.html">Workout</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+  <main class="container">
+  <div class="page-header">
+    <h1>Mindfulness & Meditation</h1>
+    <p class="page-description">Find your inner peace with guided breathing exercises, meditation timers, and ambient sounds</p>
+  </div>
+
+  <!-- Guided Breathing Section -->
+  <section class="mindfulness-section breathing-section" aria-label="Guided breathing exercise">
+    <div class="section-header">
+      <h2>Guided Breathing</h2>
+      <p>Follow the visual guide to practice deep, mindful breathing</p>
+    </div>
+    
+    <div class="breath-container">
+      <div class="breath-visual">
+        <div id="breathCircle" class="breath-circle">
+          <div class="breath-inner-circle"></div>
+          <div class="breath-ring"></div>
+        </div>
+        <div id="breathText" class="breath-text">Ready to begin</div>
+        <div id="breathInstructions" class="breath-instructions">Click start to begin your breathing session</div>
+      </div>
+      
+      <div class="breath-controls">
+        <div class="breath-settings">
+          <label>
+            Breath Pattern
+            <select id="breathPattern">
+              <option value="4-4-4">4-4-4 (Balanced)</option>
+              <option value="4-7-8">4-7-8 (Relaxing)</option>
+              <option value="6-2-6">6-2-6 (Energizing)</option>
+              <option value="box">Box Breathing (4-4-4-4)</option>
+            </select>
+          </label>
+          <label>
+            Session Duration
+            <select id="breathDuration">
+              <option value="60">1 minute</option>
+              <option value="180">3 minutes</option>
+              <option value="300" selected>5 minutes</option>
+              <option value="600">10 minutes</option>
+              <option value="0">Unlimited</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="breath-buttons">
+          <button id="startBreath" class="btn primary">
+            <span class="btn-icon">🫁</span>
+            Start Breathing
+          </button>
+          <button id="pauseBreath" class="btn secondary" disabled>
+            <span class="btn-icon">⏸️</span>
+            Pause
+          </button>
+          <button id="stopBreath" class="btn secondary" disabled>
+            <span class="btn-icon">⏹️</span>
+            Stop
+          </button>
+        </div>
+      </div>
+      
+      <div id="breathProgress" class="breath-progress" hidden>
+        <div class="progress-info">
+          <span id="breathCycles">Cycles: 0</span>
+          <span id="breathTimeLeft">Time: 5:00</span>
+        </div>
+        <div class="progress-bar">
+          <div id="breathProgressBar" class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timer Section -->
+  <section class="mindfulness-section timer-section" aria-label="Meditation timer">
+    <div class="section-header">
+      <h2>Meditation Timer</h2>
+      <p>Choose your session type and duration for focused meditation practice</p>
+    </div>
+    
+    <div class="timer-container">
+      <div class="timer-settings">
+        <div class="session-type-tabs">
+          <button class="tab-btn active" data-type="meditation">Meditation</button>
+          <button class="tab-btn" data-type="pomodoro">Pomodoro</button>
+          <button class="tab-btn" data-type="custom">Custom</button>
+        </div>
+        
+        <div class="timer-config">
+          <div id="meditationConfig" class="config-panel active">
+            <label>
+              Duration
+              <select id="meditationDuration">
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+                <option value="20">20 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60">1 hour</option>
+              </select>
+            </label>
+          </div>
+          
+          <div id="pomodoroConfig" class="config-panel">
+            <div class="pomodoro-settings">
+              <label>
+                Work Duration
+                <select id="pomodoroWork">
+                  <option value="25">25 minutes</option>
+                  <option value="30">30 minutes</option>
+                  <option value="45">45 minutes</option>
+                  <option value="50">50 minutes</option>
+                </select>
+              </label>
+              <label>
+                Break Duration
+                <select id="pomodoroBreak">
+                  <option value="5">5 minutes</option>
+                  <option value="10">10 minutes</option>
+                  <option value="15">15 minutes</option>
+                </select>
+              </label>
+              <label>
+                Cycles
+                <select id="pomodoroCycles">
+                  <option value="1">1 cycle</option>
+                  <option value="2">2 cycles</option>
+                  <option value="3">3 cycles</option>
+                  <option value="4">4 cycles</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          
+          <div id="customConfig" class="config-panel">
+            <label>
+              Minutes
+              <input id="customMinutes" type="number" value="5" min="1" max="120" />
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timer-display">
+        <div class="timer-circle">
+          <svg width="200" height="200" class="timer-ring">
+            <circle cx="100" cy="100" r="90" class="timer-track"></circle>
+            <circle cx="100" cy="100" r="90" class="timer-progress" id="timerProgress"></circle>
+          </svg>
+          <div class="timer-time">
+            <div id="sessionTimer" class="time-display">05:00</div>
+            <div id="timerLabel" class="timer-label">Ready</div>
+          </div>
+        </div>
+        
+        <div class="timer-controls">
+          <button id="startTimer" class="btn primary large">
+            <span class="btn-icon">▶️</span>
+            Start Session
+          </button>
+          <button id="pauseTimer" class="btn secondary" disabled>
+            <span class="btn-icon">⏸️</span>
+            Pause
+          </button>
+          <button id="stopTimer" class="btn secondary" disabled>
+            <span class="btn-icon">⏹️</span>
+            Stop
+          </button>
+        </div>
+        
+        <div id="pomodoroStatus" class="pomodoro-status" hidden>
+          <div class="cycle-info">
+            <span id="currentCycle">Cycle 1 of 4</span>
+            <span id="sessionType">Work Session</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambient Sounds Section -->
+  <section class="mindfulness-section sounds-section" aria-label="Ambient sounds">
+    <div class="section-header">
+      <h2>Ambient Sounds</h2>
+      <p>Choose calming background sounds to enhance your practice</p>
+    </div>
+    
+    <div class="sounds-container">
+      <div class="sound-grid">
+        <div class="sound-card" data-sound="rain">
+          <div class="sound-icon">🌧️</div>
+          <h3>Rain</h3>
+          <button class="sound-toggle" data-sound="rain">Play</button>
+        </div>
+        <div class="sound-card" data-sound="ocean">
+          <div class="sound-icon">🌊</div>
+          <h3>Ocean Waves</h3>
+          <button class="sound-toggle" data-sound="ocean">Play</button>
+        </div>
+        <div class="sound-card" data-sound="forest">
+          <div class="sound-icon">🌲</div>
+          <h3>Forest</h3>
+          <button class="sound-toggle" data-sound="forest">Play</button>
+        </div>
+        <div class="sound-card" data-sound="birds">
+          <div class="sound-icon">🐦</div>
+          <h3>Birds</h3>
+          <button class="sound-toggle" data-sound="birds">Play</button>
+        </div>
+        <div class="sound-card" data-sound="fire">
+          <div class="sound-icon">🔥</div>
+          <h3>Fireplace</h3>
+          <button class="sound-toggle" data-sound="fire">Play</button>
+        </div>
+        <div class="sound-card" data-sound="wind">
+          <div class="sound-icon">💨</div>
+          <h3>Wind</h3>
+          <button class="sound-toggle" data-sound="wind">Play</button>
+        </div>
+      </div>
+      
+      <div class="volume-control">
+        <label>
+          <span class="volume-icon">🔊</span>
+          Volume
+          <input type="range" id="volumeSlider" min="0" max="100" value="50" />
+          <span id="volumeValue">50%</span>
+        </label>
+      </div>
+      
+      <div class="sound-controls">
+        <button id="stopAllSounds" class="btn secondary">
+          <span class="btn-icon">⏹️</span>
+          Stop All Sounds
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session History -->
+  <section class="mindfulness-section history-section">
+    <div class="section-header">
+      <h2>Session History</h2>
+      <p>Track your mindfulness journey and progress</p>
+    </div>
+    
+    <div class="history-container">
+      
+      <div class="history-filters">
+        <button class="filter-btn active" data-filter="all">All Sessions</button>
+        <button class="filter-btn" data-filter="breathing">Breathing</button>
+        <button class="filter-btn" data-filter="meditation">Meditation</button>
+        <button class="filter-btn" data-filter="pomodoro">Pomodoro</button>
+      </div>
+      
+      <div class="sessions-list">
+        <div id="sessionsList" class="sessions-container">
+          <!-- Sessions will be dynamically added here -->
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Healthy Recipes</a></li>
+            <li><a href="calculator.html">Calorie Calculator</a></li>
+            <li><a href="workout.html">Workout Plans</a></li>
+            <li><a href="mindfulness.html">Mindfulness</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Health Resources -->
+        <div class="footer-section">
+          <h3>Health Resources</h3>
+          <ul>
+            <li><a href="#nutrition-tips">Nutrition Tips</a></li>
+            <li><a href="#meal-planning">Meal Planning</a></li>
+            <li><a href="#fitness-guides">Fitness Guides</a></li>
+            <li><a href="#wellness-blog">Wellness Blog</a></li>
+            <li><a href="#health-tracker">Health Tracker</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#community">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section">
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get weekly health tips, recipes, and wellness insights delivered to your inbox.</p>
+            <form id="footerNewsletterForm" class="footer-newsletter-form">
+              <input type="email" id="footerNewsEmail" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="YouTube">📺</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> GreenBite — Empowering your wellness journey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script type="module">
+import { showToast, formatTime } from './js/common.js';
+import './js/mindfulness.js';
+</script>
+</body>
+</html>

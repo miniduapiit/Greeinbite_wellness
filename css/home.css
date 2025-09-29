@@ -1,0 +1,247 @@
+/* Home page specific styles */
+
+/* Main content container */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hero section */
+.hero {
+  padding: 4rem 0 5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #eaffef 0%, #f0fff6 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%232FAF6A" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="%232FAF6A" opacity="0.15"/><circle cx="40" cy="70" r="1" fill="%232FAF6A" opacity="0.1"/></svg>');
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1a5530;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Newsletter styling */
+.newsletter {
+  margin: 2rem auto 0;
+  display: inline-flex;
+  box-shadow: 0 4px 15px rgba(47, 175, 106, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  justify-self: center;
+}
+
+.newsletter input {
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  min-width: 280px;
+  outline: none;
+  background: white;
+}
+
+.newsletter input::placeholder {
+  color: var(--muted);
+}
+
+.newsletter button {
+  padding: 1rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background: #259558;
+}
+
+/* Health tips section */
+.tips {
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 8px 25px rgba(40, 40, 40, .08);
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+}
+
+.tips h2 {
+  color: var(--accent);
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.tips p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+/* Features/cards section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  justify-items: center;
+}
+
+.card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px rgba(40, 40, 40, .08);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(47, 175, 106, 0.1);
+  max-width: 350px;
+  width: 100%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #34d399);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(40, 40, 40, .12);
+}
+
+.card::after {
+  content: '→';
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0 4rem;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+  
+  .newsletter {
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 2rem auto 0;
+  }
+  
+  .newsletter input {
+    min-width: auto;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .newsletter button {
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 3rem auto;
+    max-width: 400px;
+    padding: 0 1rem;
+  }
+  
+  .tips {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+}

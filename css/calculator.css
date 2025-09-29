@@ -1,0 +1,382 @@
+/* Calculator page specific styles */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Form Styles */
+.calc-form {
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(40, 40, 40, .1);
+  border: 1px solid rgba(47, 175, 106, 0.1);
+}
+
+.calc-form label {
+  display: block;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.calc-form input,
+.calc-form select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.calc-form input:focus,
+.calc-form select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 175, 106, 0.1);
+  transform: translateY(-1px);
+}
+
+.calc-form input:invalid {
+  border-color: #e74c3c;
+}
+
+.calc-form button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--accent), #259558);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(47, 175, 106, 0.3);
+}
+
+.calc-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(47, 175, 106, 0.4);
+}
+
+.calc-form button:active {
+  transform: translateY(0);
+}
+
+/* Results Section */
+.calc-result {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(40, 40, 40, .1);
+  border: 1px solid rgba(47, 175, 106, 0.1);
+}
+
+.calc-result h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* BMR/TDEE Cards */
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0 3rem;
+}
+
+.number-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.number-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #259558);
+}
+
+.number-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(40, 40, 40, .15);
+}
+
+.number-card h3 {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.number-display {
+  margin-bottom: 0.75rem;
+}
+
+.counter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  display: inline-block;
+}
+
+.unit {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.number-description {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Macros Section */
+.macros-section {
+  margin-top: 3rem;
+}
+
+.macros-section h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.macros-description {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.macros {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.macro-item {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+}
+
+.carbs-macro {
+  border-left-color: #3498db;
+}
+
+.protein-macro {
+  border-left-color: #e74c3c;
+}
+
+.fat-macro {
+  border-left-color: #f39c12;
+}
+
+.macro-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.macro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.macro-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.macro-percentage {
+  background: var(--accent);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.macro-details {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.macro-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.macro-unit {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.macro-calories {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+/* Custom Progress Bars */
+.progress-container {
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.carbs-fill {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.protein-fill {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.fat-fill {
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Macro Summary */
+.macro-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.macro-summary p {
+  margin: 0;
+  color: #856404;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calc-form {
+    margin: 0 1rem 2rem;
+    padding: 1.5rem;
+  }
+  
+  .calc-result {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .numbers {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .counter {
+    font-size: 2rem;
+  }
+  
+  .macro-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .macro-calories {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .calc-form {
+    padding: 1rem;
+  }
+  
+  .calc-result {
+    padding: 1rem;
+  }
+  
+  .number-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .counter {
+    font-size: 1.8rem;
+  }
+}

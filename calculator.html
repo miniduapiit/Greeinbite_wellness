@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calorie Calculator — GreenBite Wellness</title>
+  <meta name="description" content="Calculate your daily calorie needs with the GreenBite calorie calculator.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2FAF6A">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">GreenBite</a>
+      <nav class="main-nav" id="main-nav">
+        <a href="recipes.html">Recipes</a>
+        <a href="calculator.html">Calorie Calc</a>
+        <a href="workout.html">Workout</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Calorie & Nutrition Calculator</h1>
+    <form id="calcForm" class="calc-form" aria-label="calorie calculator">
+      <label>Age <input type="number" id="age" min="10" required></label>
+      <label>Gender
+        <select id="gender"><option value="male">Male</option><option value="female">Female</option></select>
+      </label>
+      <label>Height (cm) <input type="number" id="height" min="50" required></label>
+      <label>Weight (kg) <input type="number" id="weight" min="20" required></label>
+      <label>Activity Level
+        <select id="activity">
+          <option value="1.2">Sedentary - Little or no exercise</option>
+          <option value="1.375">Lightly Active - Light exercise/sports 1-3 days/week</option>
+          <option value="1.55">Moderately Active - Moderate exercise 3-5 days/week</option>
+          <option value="1.725">Very Active - Hard exercise 6-7 days/week</option>
+          <option value="1.9">Super Active - Very hard exercise/physical job</option>
+        </select>
+      </label>
+      <button type="submit">Calculate</button>
+    </form>
+
+    <section id="result" class="calc-result" aria-live="polite" hidden>
+      <h2>Your Personalized Results</h2>
+      
+      <div class="numbers">
+        <div class="number-card bmr-card">
+          <h3>BMR</h3>
+          <div class="number-display">
+            <span id="bmr" class="counter">0</span>
+            <span class="unit">kcal/day</span>
+          </div>
+          <p class="number-description">Calories burned at rest</p>
+        </div>
+        <div class="number-card tdee-card">
+          <h3>TDEE</h3>
+          <div class="number-display">
+            <span id="tdee" class="counter">0</span>
+            <span class="unit">kcal/day</span>
+          </div>
+          <p class="number-description">Total daily energy needs</p>
+        </div>
+      </div>
+
+      <div class="macros-section">
+        <h3>Daily Macronutrient Breakdown</h3>
+        <p class="macros-description">Recommended daily intake based on your TDEE</p>
+        
+        <div class="macros">
+          <div class="macro-item carbs-macro">
+            <div class="macro-header">
+              <span class="macro-name">Carbohydrates</span>
+              <span class="macro-percentage">50%</span>
+            </div>
+            <div class="macro-details">
+              <span id="carbs" class="macro-amount counter">0</span>
+              <span class="macro-unit">grams</span>
+              <span class="macro-calories">(<span id="carbsCal" class="counter">0</span> kcal)</span>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div id="pCarbs" class="progress-fill carbs-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="macro-item protein-macro">
+            <div class="macro-header">
+              <span class="macro-name">Protein</span>
+              <span class="macro-percentage">20%</span>
+            </div>
+            <div class="macro-details">
+              <span id="protein" class="macro-amount counter">0</span>
+              <span class="macro-unit">grams</span>
+              <span class="macro-calories">(<span id="proteinCal" class="counter">0</span> kcal)</span>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div id="pProtein" class="progress-fill protein-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="macro-item fat-macro">
+            <div class="macro-header">
+              <span class="macro-name">Fat</span>
+              <span class="macro-percentage">30%</span>
+            </div>
+            <div class="macro-details">
+              <span id="fat" class="macro-amount counter">0</span>
+              <span class="macro-unit">grams</span>
+              <span class="macro-calories">(<span id="fatCal" class="counter">0</span> kcal)</span>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div id="pFat" class="progress-fill fat-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="macro-summary">
+          <p><strong>Note:</strong> These are general recommendations. Consult with a nutritionist for personalized advice.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Healthy Recipes</a></li>
+            <li><a href="calculator.html">Calorie Calculator</a></li>
+            <li><a href="workout.html">Workout Plans</a></li>
+            <li><a href="mindfulness.html">Mindfulness</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Health Resources -->
+        <div class="footer-section">
+          <h3>Health Resources</h3>
+          <ul>
+            <li><a href="#nutrition-tips">Nutrition Tips</a></li>
+            <li><a href="#meal-planning">Meal Planning</a></li>
+            <li><a href="#fitness-guides">Fitness Guides</a></li>
+            <li><a href="#wellness-blog">Wellness Blog</a></li>
+            <li><a href="#health-tracker">Health Tracker</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#community">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section">
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get weekly health tips, recipes, and wellness insights delivered to your inbox.</p>
+            <form id="footerNewsletterForm" class="footer-newsletter-form">
+              <input type="email" id="footerNewsEmail" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="YouTube">📺</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> GreenBite — Empowering your wellness journey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script type="module">
+// Import all required modules
+import { showToast } from './js/common.js';
+import { initializeFooter } from './js/footer.js';
+
+// Initialize footer functionality
+initializeFooter();
+
+// Calculator functionality
+const form = document.getElementById('calcForm');
+const resultSection = document.getElementById('result');
+
+// Animation utility functions
+function animateCounter(element, start, end, duration = 2000) {
+  const startTime = performance.now();
+  const startValue = parseInt(start) || 0;
+  const endValue = parseInt(end);
+  const difference = endValue - startValue;
+
+  function updateCounter(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Easing function for smooth animation
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.round(startValue + (difference * easedProgress));
+    
+    element.textContent = currentValue.toLocaleString();
+    
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    }
+  }
+  
+  requestAnimationFrame(updateCounter);
+}
+
+function animateProgressBar(element, targetPercentage, duration = 2000, delay = 0) {
+  setTimeout(() => {
+    element.style.width = `${targetPercentage}%`;
+    element.style.transition = `width ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+  }, delay);
+}
+
+// Calculation functions
+function calculateBMR(weight, height, age, gender) {
+  // Mifflin-St Jeor Equation
+  const baseBMR = 10 * weight + 6.25 * height - 5 * age;
+  return Math.round(baseBMR + (gender === 'male' ? 5 : -161));
+}
+
+function calculateTDEE(bmr, activityLevel) {
+  return Math.round(bmr * activityLevel);
+}
+
+function calculateMacros(tdee) {
+  // Macronutrient breakdown (50% carbs, 20% protein, 30% fat)
+  const carbsCalories = tdee * 0.50;
+  const proteinCalories = tdee * 0.20;
+  const fatCalories = tdee * 0.30;
+  
+  return {
+    carbs: {
+      grams: Math.round(carbsCalories / 4),
+      calories: Math.round(carbsCalories)
+    },
+    protein: {
+      grams: Math.round(proteinCalories / 4),
+      calories: Math.round(proteinCalories)
+    },
+    fat: {
+      grams: Math.round(fatCalories / 9),
+      calories: Math.round(fatCalories)
+    }
+  };
+}
+
+// Form validation
+function validateForm(age, height, weight) {
+  const errors = [];
+  
+  if (!age || age < 10 || age > 120) {
+    errors.push('Please enter a valid age (10-120 years)');
+  }
+  
+  if (!height || height < 100 || height > 250) {
+    errors.push('Please enter a valid height (100-250 cm)');
+  }
+  
+  if (!weight || weight < 30 || weight > 300) {
+    errors.push('Please enter a valid weight (30-300 kg)');
+  }
+  
+  return errors;
+}
+
+// Main calculation and display function
+function calculateAndDisplay(formData) {
+  const { age, gender, height, weight, activityLevel } = formData;
+  
+  // Validate inputs
+  const errors = validateForm(age, height, weight);
+  if (errors.length > 0) {
+    showToast(errors[0], 'error');
+    return;
+  }
+  
+  try {
+    // Calculate BMR and TDEE
+    const bmr = calculateBMR(weight, height, age, gender);
+    const tdee = calculateTDEE(bmr, activityLevel);
+    const macros = calculateMacros(tdee);
+    
+    // Show results section
+    resultSection.hidden = false;
+    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Animate counters with staggered timing
+    setTimeout(() => {
+      animateCounter(document.getElementById('bmr'), 0, bmr, 1500);
+    }, 200);
+    
+    setTimeout(() => {
+      animateCounter(document.getElementById('tdee'), 0, tdee, 1500);
+    }, 400);
+    
+    // Animate macro values
+    setTimeout(() => {
+      animateCounter(document.getElementById('carbs'), 0, macros.carbs.grams, 1500);
+      animateCounter(document.getElementById('carbsCal'), 0, macros.carbs.calories, 1500);
+    }, 600);
+    
+    setTimeout(() => {
+      animateCounter(document.getElementById('protein'), 0, macros.protein.grams, 1500);
+      animateCounter(document.getElementById('proteinCal'), 0, macros.protein.calories, 1500);
+    }, 800);
+    
+    setTimeout(() => {
+      animateCounter(document.getElementById('fat'), 0, macros.fat.grams, 1500);
+      animateCounter(document.getElementById('fatCal'), 0, macros.fat.calories, 1500);
+    }, 1000);
+    
+    // Animate progress bars
+    animateProgressBar(document.getElementById('pCarbs'), 50, 1500, 1200);
+    animateProgressBar(document.getElementById('pProtein'), 20, 1500, 1400);
+    animateProgressBar(document.getElementById('pFat'), 30, 1500, 1600);
+    
+    // Show success message
+    setTimeout(() => {
+      showToast('Calculation complete! Scroll down to see your results.', 'success');
+    }, 500);
+    
+  } catch (error) {
+    console.error('Calculation error:', error);
+    showToast('An error occurred during calculation. Please try again.', 'error');
+  }
+}
+
+// Form submission handler
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Get form values
+  const formData = {
+    age: parseInt(document.getElementById('age').value),
+    gender: document.getElementById('gender').value,
+    height: parseInt(document.getElementById('height').value),
+    weight: parseInt(document.getElementById('weight').value),
+    activityLevel: parseFloat(document.getElementById('activity').value)
+  };
+  
+  // Reset progress bars before new calculation
+  const progressBars = ['pCarbs', 'pProtein', 'pFat'];
+  progressBars.forEach(id => {
+    const element = document.getElementById(id);
+    element.style.width = '0%';
+    element.style.transition = 'none';
+  });
+  
+  // Perform calculation
+  calculateAndDisplay(formData);
+});
+
+// Add input validation feedback
+const inputs = ['age', 'height', 'weight'];
+inputs.forEach(inputId => {
+  const input = document.getElementById(inputId);
+  input.addEventListener('blur', () => {
+    const value = parseInt(input.value);
+    const errors = validateForm(
+      inputId === 'age' ? value : parseInt(document.getElementById('age').value) || 0,
+      inputId === 'height' ? value : parseInt(document.getElementById('height').value) || 0,
+      inputId === 'weight' ? value : parseInt(document.getElementById('weight').value) || 0
+    );
+    
+    if (errors.length > 0 && input.value) {
+      input.style.borderColor = '#e74c3c';
+    } else {
+      input.style.borderColor = '#ddd';
+    }
+  });
+});
+</script>
+</body>
+</html>

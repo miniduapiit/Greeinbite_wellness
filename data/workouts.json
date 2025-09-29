@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "name": "Push-ups",
+    "body": "arms",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Classic push-ups targeting chest, shoulders, and triceps",
+    "instructions": "Start in plank position, lower chest to ground, push back up",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 2,
+    "name": "Squats",
+    "body": "legs",
+    "equipment": "none",
+    "duration": 45,
+    "description": "Basic squats for leg and glute strength",
+    "instructions": "Stand with feet shoulder-width apart, lower into sitting position, return to standing",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 3,
+    "name": "Plank",
+    "body": "core",
+    "equipment": "none",
+    "duration": 60,
+    "description": "Hold plank position for core stability",
+    "instructions": "Hold body straight in plank position, engage core",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 4,
+    "name": "Jumping Jacks",
+    "body": "full",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Full body cardio exercise",
+    "instructions": "Jump while spreading legs and raising arms overhead",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 5,
+    "name": "Lunges",
+    "body": "legs",
+    "equipment": "none",
+    "duration": 40,
+    "description": "Alternating leg lunges",
+    "instructions": "Step forward into lunge position, alternate legs",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 6,
+    "name": "Mountain Climbers",
+    "body": "full",
+    "equipment": "none",
+    "duration": 30,
+    "description": "High-intensity full body exercise",
+    "instructions": "In plank position, alternate bringing knees to chest rapidly",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 7,
+    "name": "Tricep Dips",
+    "body": "arms",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Tricep dips using chair or elevated surface",
+    "instructions": "Sit on edge of chair, lower body using arms, push back up",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 8,
+    "name": "Burpees",
+    "body": "full",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Full body high-intensity exercise",
+    "instructions": "Squat, jump back to plank, do push-up, jump forward, jump up",
+    "difficulty": "advanced"
+  },
+  {
+    "id": 9,
+    "name": "Wall Sit",
+    "body": "legs",
+    "equipment": "none",
+    "duration": 45,
+    "description": "Isometric leg exercise against wall",
+    "instructions": "Lean back against wall in sitting position, hold",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 10,
+    "name": "High Knees",
+    "body": "full",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Cardio exercise bringing knees to chest",
+    "instructions": "Run in place bringing knees up to chest level",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 11,
+    "name": "Bicep Curls",
+    "body": "arms",
+    "equipment": "dumbbells",
+    "duration": 45,
+    "description": "Classic bicep curl with dumbbells",
+    "instructions": "Hold dumbbells at sides, curl up to shoulders, lower slowly",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 12,
+    "name": "Dumbbell Squats",
+    "body": "legs",
+    "equipment": "dumbbells",
+    "duration": 45,
+    "description": "Squats while holding dumbbells",
+    "instructions": "Hold dumbbells at shoulders or sides, perform squats",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 13,
+    "name": "Shoulder Press",
+    "body": "arms",
+    "equipment": "dumbbells",
+    "duration": 40,
+    "description": "Overhead shoulder press with dumbbells",
+    "instructions": "Hold dumbbells at shoulder level, press overhead, lower slowly",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 14,
+    "name": "Dumbbell Deadlifts",
+    "body": "legs",
+    "equipment": "dumbbells",
+    "duration": 45,
+    "description": "Deadlifts with dumbbells",
+    "instructions": "Hold dumbbells, hinge at hips, lower weights, return to standing",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 15,
+    "name": "Chest Fly",
+    "body": "arms",
+    "equipment": "dumbbells",
+    "duration": 40,
+    "description": "Chest fly exercise with dumbbells",
+    "instructions": "Lie on back, extend arms out, bring dumbbells together over chest",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 16,
+    "name": "Russian Twists",
+    "body": "core",
+    "equipment": "dumbbells",
+    "duration": 45,
+    "description": "Core twists holding dumbbell",
+    "instructions": "Sit with knees bent, hold weight, twist side to side",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 17,
+    "name": "Resistance Band Pulls",
+    "body": "arms",
+    "equipment": "resistance-bands",
+    "duration": 40,
+    "description": "Pull exercises with resistance bands",
+    "instructions": "Hold band, pull apart stretching the band",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 18,
+    "name": "Band Squats",
+    "body": "legs",
+    "equipment": "resistance-bands",
+    "duration": 45,
+    "description": "Squats with resistance band tension",
+    "instructions": "Place band around legs or under feet, perform squats",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 19,
+    "name": "Crunches",
+    "body": "core",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Basic abdominal crunches",
+    "instructions": "Lie on back, knees bent, lift shoulders off ground",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 20,
+    "name": "Side Plank",
+    "body": "core",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Side plank for core stability",
+    "instructions": "Lie on side, prop up on elbow, lift body straight",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 21,
+    "name": "Kettlebell Swings",
+    "body": "full",
+    "equipment": "kettlebell",
+    "duration": 40,
+    "description": "Dynamic kettlebell swing exercise",
+    "instructions": "Hold kettlebell, swing between legs and up to chest level",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 22,
+    "name": "Goblet Squats",
+    "body": "legs",
+    "equipment": "kettlebell",
+    "duration": 45,
+    "description": "Squats holding kettlebell at chest",
+    "instructions": "Hold kettlebell at chest, perform deep squats",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 23,
+    "name": "Diamond Push-ups",
+    "body": "arms",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Push-ups with hands in diamond shape",
+    "instructions": "Form diamond with hands, perform push-ups",
+    "difficulty": "advanced"
+  },
+  {
+    "id": 24,
+    "name": "Pistol Squats",
+    "body": "legs",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Single leg squats",
+    "instructions": "Balance on one leg, squat down, return to standing",
+    "difficulty": "advanced"
+  },
+  {
+    "id": 25,
+    "name": "Bear Crawl",
+    "body": "full",
+    "equipment": "none",
+    "duration": 30,
+    "description": "Crawling movement in bear position",
+    "instructions": "Crawl forward on hands and feet, keep knees off ground",
+    "difficulty": "intermediate"
+  }
+]

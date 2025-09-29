@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GreenBite Wellness — Your guide to a healthy lifestyle</title>
+  <meta name="description" content="GreenBite Wellness is your guide to a healthy lifestyle, with recipes, workouts, and mindfulness exercises.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2FAF6A">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+
+
+
+
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{console.log('SW fail')});
+}
+</script>
+
+
+
+
+
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">GreenBite</a>
+      <nav class="main-nav" id="main-nav">
+        <a href="recipes.html">Recipes</a>
+        <a href="calculator.html">Calorie Calc</a>
+        <a href="workout.html">Workout</a>
+        <a href="mindfulness.html">Mindfulness</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content container">
+        <h1>GreenBite — Small changes, big health</h1>
+        <p id="rotating-slogan" aria-live="polite">Your journey to wellness starts with simple, sustainable choices</p>
+        <form id="newsletterForm" class="newsletter">
+          <input type="email" id="newsEmail" placeholder="Enter your email address" required>
+          <button type="submit">Get Started</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="tips container">
+      <h2>💡 Health Tip of the Day</h2>
+      <p id="daily-tip">Loading your personalized health tip...</p>
+    </section>
+
+    <section class="features container">
+      <div class="card" onclick="window.location.href='calculator.html'">
+        <h3>📊 Calorie Calculator</h3>
+        <p>Calculate your daily calorie needs and macro breakdown for optimal nutrition</p>
+      </div>
+      <div class="card" onclick="window.location.href='recipes.html'">
+        <h3>🥗 Healthy Recipes</h3>
+        <p>Discover delicious, nutritious recipes tailored to your dietary preferences</p>
+      </div>
+      <div class="card" onclick="window.location.href='mindfulness.html'">
+        <h3>🧘 Mindfulness</h3>
+        <p>Practice breathing exercises and meditation for mental wellness</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Healthy Recipes</a></li>
+            <li><a href="calculator.html">Calorie Calculator</a></li>
+            <li><a href="workout.html">Workout Plans</a></li>
+            <li><a href="mindfulness.html">Mindfulness</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Health Resources -->
+        <div class="footer-section">
+          <h3>Health Resources</h3>
+          <ul>
+            <li><a href="#nutrition-tips">Nutrition Tips</a></li>
+            <li><a href="#meal-planning">Meal Planning</a></li>
+            <li><a href="#fitness-guides">Fitness Guides</a></li>
+            <li><a href="#wellness-blog">Wellness Blog</a></li>
+            <li><a href="#health-tracker">Health Tracker</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#community">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section">
+          <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get weekly health tips, recipes, and wellness insights delivered to your inbox.</p>
+            <form id="footerNewsletterForm" class="footer-newsletter-form">
+              <input type="email" id="footerNewsEmail" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="YouTube">📺</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> GreenBite — Empowering your wellness journey. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script type="module">
+import { showToast } from './js/common.js';
+import './js/home.js';
+import { initializeFooter } from './js/footer.js';
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Newsletter subscription function
+function handleNewsletterSubscription(email, formType = 'main') {
+  if(!/^\S+@\S+\.\S+$/.test(email)) {
+    showToast('Please enter a valid email address', 'error');
+    return false;
+  }
+  
+  const list = JSON.parse(localStorage.getItem('gb_newsletter_subscribers') || '[]');
+  const subscriber = {
+    email: email,
+    subscriptionDate: new Date().toISOString(),
+    source: formType
+  };
+  
+  // Check if email already exists
+  const existingSubscriber = list.find(sub => sub.email === email);
+  if(existingSubscriber) {
+    showToast('You\'re already subscribed to our newsletter!', 'info');
+    return false;
+  }
+  
+  // Add new subscriber
+  list.push(subscriber);
+  localStorage.setItem('gb_newsletter_subscribers', JSON.stringify(list));
+  showToast('🎉 Welcome to GreenBite! Check your email for a confirmation.', 'success');
+  return true;
+}
+
+// Hero newsletter form
+document.getElementById('newsletterForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const email = document.getElementById('newsEmail').value.trim();
+  if(handleNewsletterSubscription(email, 'hero')) {
+    document.getElementById('newsletterForm').reset();
+  }
+});
+
+// Initialize footer functionality
+initializeFooter();
+
+// Display subscriber count (optional feature)
+const subscriberCount = JSON.parse(localStorage.getItem('gb_newsletter_subscribers') || '[]').length;
+if(subscriberCount > 0) {
+  console.log(`GreenBite Newsletter Subscribers: ${subscriberCount}`);
+}
+</script>
+</body>
+</html>

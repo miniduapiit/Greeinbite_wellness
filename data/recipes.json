@@ -1,0 +1,104 @@
+[
+  {
+    "id": "r1",
+    "title": "Quinoa Salad",
+    "category": "Salad",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+    "description": "Protein-packed quinoa with veggies.",
+    "ingredients": [
+      "1 cup quinoa",
+      "2 cups water",
+      "1 cup cherry tomatoes",
+      "1/2 cucumber",
+      "olive oil",
+      "lemon"
+    ],
+    "steps": [
+      "Rinse quinoa",
+      "Boil quinoa with water for 15 min",
+      "Chop veggies",
+      "Mix with dressing"
+    ],
+    "nutrition": { "calories": 320, "protein": 10, "carbs": 45, "fat": 8 }
+  },
+  {
+    "id": "r2",
+    "title": "Overnight Oats",
+    "category": "Breakfast",
+    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=600&q=80",
+    "description": "Quick healthy breakfast",
+    "ingredients": [
+      "1/2 cup oats",
+      "1 cup milk",
+      "1 tbsp chia seeds",
+      "berries"
+    ],
+    "steps": [
+      "Combine ingredients",
+      "Refrigerate overnight",
+      "Top with berries"
+    ],
+    "nutrition": { "calories": 280, "protein": 8, "carbs": 42, "fat": 7 }
+  },
+  {
+    "id": "r3",
+    "title": "Avocado Toast",
+    "category": "Breakfast",
+    "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=600&q=80",
+    "description": "Simple and delicious avocado toast.",
+    "ingredients": [
+      "2 slices whole grain bread",
+      "1 ripe avocado",
+      "salt",
+      "pepper",
+      "lemon juice"
+    ],
+    "steps": [
+      "Toast bread",
+      "Mash avocado with salt, pepper, and lemon juice",
+      "Spread on toast"
+    ],
+    "nutrition": { "calories": 350, "protein": 7, "carbs": 38, "fat": 18 }
+  },
+  {
+    "id": "r4",
+    "title": "Grilled Chicken Bowl",
+    "category": "Lunch",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80",
+    "description": "Healthy grilled chicken with brown rice and veggies.",
+    "ingredients": [
+      "1 chicken breast",
+      "1 cup brown rice",
+      "1 cup broccoli",
+      "olive oil",
+      "salt",
+      "pepper"
+    ],
+    "steps": [
+      "Grill chicken breast",
+      "Cook brown rice",
+      "Steam broccoli",
+      "Assemble bowl"
+    ],
+    "nutrition": { "calories": 420, "protein": 32, "carbs": 48, "fat": 10 }
+  },
+  {
+    "id": "r5",
+    "title": "Berry Smoothie",
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=600&q=80",
+    "description": "Refreshing mixed berry smoothie.",
+    "ingredients": [
+      "1 cup mixed berries",
+      "1 banana",
+      "1 cup almond milk",
+      "1 tbsp honey"
+    ],
+    "steps": [
+      "Combine all ingredients in blender",
+      "Blend until smooth",
+      "Serve chilled"
+    ],
+    "nutrition": { "calories": 180, "protein": 3, "carbs": 40, "fat": 2 }
+  }
+]
